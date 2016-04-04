@@ -45,3 +45,9 @@ ADD Data ./Data
 
 # Run the notebook
 CMD jupyter notebook
+    --pylab=inline \
+    --ip=* \
+    --MappingKernelManager.time_to_dead=10 \
+    --MappingKernelManager.first_beat=3 \
+    --notebook-dir=/notebooks-dir-python/
+
