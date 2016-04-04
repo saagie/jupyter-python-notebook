@@ -40,14 +40,9 @@ RUN pip2 --no-cache-dir install ipywidgets \
 								networkx \
 								&& rm -rf /root/.cachex
 
-ADD examples-notebook ./Python3-examples
-ADD Data ./Data
-
 # Run the notebook
-CMD jupyter notebook
-    --pylab=inline \
+CMD jupyter notebook \
     --ip=* \
     --MappingKernelManager.time_to_dead=10 \
     --MappingKernelManager.first_beat=3 \
     --notebook-dir=/notebooks-dir-python/
-
