@@ -34,5 +34,5 @@
  		* shapely
 
 ## Install libraries with :
-	* !pip install libraryName
+	!pip install libraryName
 
