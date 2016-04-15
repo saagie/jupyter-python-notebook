@@ -1,7 +1,7 @@
 # Jupyter Datascience Notebook for python
 
 ## Run with :
-	docker run -p 8888:8888 saagie/python-notebook:latest
+	docker run -p 8888:8888 -v /path/to/data/notebooks/dir:/notebooks-dir saagie/python-notebook:latest
 
 ## Libraries :
 	* Data Processing
