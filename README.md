@@ -1,5 +1,6 @@
 # Jupyter Datascience Notebook for python
 
+## Run with :
 docker run -p 8888:8888 saagie/python-notebook:latest
 
 ## Libraries :
@@ -34,3 +35,7 @@ docker run -p 8888:8888 saagie/python-notebook:latest
     	* ipywidgets
 		* fiona
  		* shapely
+
+## Install libraries with :
+	* !pip install libraryName
+
