@@ -27,6 +27,9 @@
 		* pyodbc
     	* hdfs
 		* impyla
+		* ibis
+		* SQLAlchemy
+		* pymongo
 
 	* Utils
     	* ipywidgets

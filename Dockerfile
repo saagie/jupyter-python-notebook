@@ -24,6 +24,11 @@ RUN pip3 --no-cache-dir install ipywidgets \
 								fiona \
 								folium \
 								shapely \
+								thrift_sasl \
+								sasl \
+								SQLAlchemy \
+								ibis-framework \
+								pymongo \
 								&& rm -rf /root/.cache
 
 # Install python2 libraries
@@ -39,6 +44,7 @@ RUN pip2 --no-cache-dir install ipywidgets \
 								pybrain \
 								networkx \
 								&& rm -rf /root/.cachex
+
 
 # Run the notebook
 CMD jupyter notebook \
