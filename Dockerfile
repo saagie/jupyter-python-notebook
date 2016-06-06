@@ -14,6 +14,7 @@ RUN pip3 --no-cache-dir install ipywidgets \
 								pyodbc \
 								impyla \
 								hdfs \
+								hdfs[avro,dataframe,kerberos] \
 								scikit-image \
 								bokeh \
 								keras \
