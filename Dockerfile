@@ -3,7 +3,7 @@ FROM jupyter/notebook
 MAINTAINER Saagie
 
 # Installing libraries dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends python-numpy python3-numpy libpng3 libfreetype6-dev libatlas-base-dev gfortran libgdal1-dev libjpeg-dev sasl2-bin libsasl2-2 libsasl2-dev unixodbc-dev && apt-get clean && rm -rf /var/lib/apt/lists/* 
+RUN apt-get update && apt-get install -y --no-install-recommends python-numpy python3-numpy libpng3 libfreetype6-dev libatlas-base-dev gfortran libgdal1-dev libjpeg-dev sasl2-bin libsasl2-2 libsasl2-dev libsasl2-modules unixodbc-dev && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
 # Install python3 libraries
 RUN pip3 --no-cache-dir install ipywidgets \
