@@ -22,38 +22,61 @@ RUN apt-get update && apt-get install -y --no-install-recommends python-numpy \
     rm -rf /var/lib/apt/lists/*
 
 # Install python2 libraries
-RUN pip2 --no-cache-dir install ipywidgets==7.0.5 \
-    pandas==0.21.1 \
-    matplotlib==2.1.1 \
-    scipy==1.0.0 \
-    scikit-learn==0.19.1 \
-    scikit-image==0.13.1 \
-    pyodbc==4.0.21 \
-    impyla==0.14.0 \
+RUN pip2 --no-cache-dir install \
     bokeh==0.12.13 \
-    pybrain==0.3 \
+    fiona==1.7.11 \
+    folium==0.4.0 \
+    hdfs[avro,dataframe,kerberos] \
+    ibis-framework==0.12.0 \
+    impyla==0.14.0 \
+    ipywidgets==7.0.5 \
+    matplotlib==2.1.1 \
+    mpld3==0.3 \
     networkx==2.0 \
-    seaborn \
-    statsmodels && \
+    pandas==0.21.1 \
+    pybrain==0.3 \
+    pymongo==3.2.2 \
+    pyodbc==4.0.21 \
+    sasl==0.2.1 \
+    scikit-image==0.13.1 \
+    scikit-learn==0.19.1 \
+    scipy==1.0.0 \
+    seaborn==0.8.1 \
+    shapely==1.6.3 \
+    SQLAlchemy==1.1.13 \
+    statsmodels==0.8.0 \
+    thrift_sasl==0.3.0 && \
     rm -rf /root/.cachex
 
 USER $NB_USER
 
 # Add libraries and upgrade libraries installed in base image for python 3
 RUN conda install --quiet --yes \
-    'pandas=0.21.1' \
-    'matplotlib=2.1.1' \
+    'fiona=1.7.11' \
+    'folium=0.4.0' \
+    'hdf5=1.10.1' \
+    'ibis-framework=0.12.0' \
     'impyla=0.14.0' \
+    'matplotlib=2.1.1' \
+    'mpld3=0.3' \
     'networkx=2.0' \
+    'pandas=0.21.1' \
+    'pymongo=3.2.2' \
     'pyodbc=4.0.21' \
-    'scipy=1.0.0' \
+    'sasl=0.2.1' \
+    'scikit-image=0.13.1' \
     'scikit-learn=0.19.1' \
-    'scikit-image=0.13.1' && \
+    'scipy=1.0.0' \
+    'shapely=1.6.3' \
+    'seaborn=0.8.1' \
+    'SQLAlchemy=1.1.13' \
+    'thrift_sasl=0.3.0' && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -tipsy && \
     npm cache clean && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     fix-permissions $CONDA_DIR
+
 
 # Default: run without authentication
 CMD ["start-notebook.sh", "--NotebookApp.token=''"]

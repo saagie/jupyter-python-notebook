@@ -1,7 +1,7 @@
 # Jupyter Datascience Notebook for python
 
 ## Run with :
-	docker run -p 8888:8888 -v /path/to/data/notebooks/dir:/notebooks-dir saagie/python-notebook:latest
+	docker run -p 8888:8888 -v /path/to/data/notebooks/dir:/home/jovyan saagie/jupyter-notebook:latest
 
 ## Libraries :
 	* Data Processing
@@ -12,7 +12,7 @@
 	* Machine Learning
     	* sklearn
 		* keras
-    	* pybrain
+    	* pybrain (python 2 only)
     	* statsmodel
 		* networkx
 
@@ -25,9 +25,9 @@
 
 	* Database connection
 		* pyodbc
-    	* hdfs
+    	* hdfs **
 		* impyla
-		* ibis
+		* ibis-framework
 		* SQLAlchemy
 		* pymongo
 
@@ -37,5 +37,8 @@
  		* shapely
 
 ## Install libraries with :
+### For python 3
 	!pip install libraryName
 
+### For python 2
+	!pip2 install libraryName
