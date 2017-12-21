@@ -77,6 +77,12 @@ RUN conda install --quiet --yes \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     fix-permissions $CONDA_DIR
 
+# Create default workdir (useful if no volume mounted)
+USER root
+RUN mkdir /notebooks-dir && chown 1000:100 /notebooks-dir
+USER $NB_USER
+
+# Define default workdir
 WORKDIR /notebook-dirs
 
 # Default: run without authentication
