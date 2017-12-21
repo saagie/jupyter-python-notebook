@@ -77,6 +77,7 @@ RUN conda install --quiet --yes \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     fix-permissions $CONDA_DIR
 
+WORKDIR /notebook-dirs
 
 # Default: run without authentication
 CMD ["start-notebook.sh", "--NotebookApp.token=''"]
