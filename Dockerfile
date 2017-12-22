@@ -83,7 +83,7 @@ RUN mkdir /notebooks-dir && chown 1000:100 /notebooks-dir
 USER $NB_USER
 
 # Define default workdir
-WORKDIR /notebook-dirs
+WORKDIR /notebooks-dir
 
 # Default: run without authentication
 CMD ["start-notebook.sh", "--NotebookApp.token=''"]
