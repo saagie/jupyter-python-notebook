@@ -1,4 +1,4 @@
-# Jupyter Datascience Notebook for python
+# Jupyter Datascience Notebook for python (Deprecated)
 
 ## Run with :
 	docker run -p 8888:8888 -v /path/to/data/notebooks/dir:/notebooks-dir saagie/jupyter-notebook:latest
